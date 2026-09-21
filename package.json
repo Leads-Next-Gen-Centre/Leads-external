@@ -10,7 +10,7 @@
     "dev:portal": "npm --prefix portal/leads-dashboard run dev",
     "build:portal": "npm --prefix portal/leads-dashboard run build",
     "setup:portal": "npm --prefix portal/leads-dashboard run setup",
-    "deploy:cloudflare": "npx wrangler pages deploy out"
+    "deploy:cloudflare": "npx wrangler deploy"
   },
   "dependencies": {
     "@types/matter-js": "^0.20.2",
