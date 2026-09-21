@@ -1,15 +1,11 @@
-interface Env {
-  ASSETS: Fetcher;
-}
-
 export default {
-  async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
     // API Route: /api/contact
     if (url.pathname === "/api/contact" && request.method === "POST") {
       try {
-        const body = (await request.json()) as any;
+        const body = await request.json();
         const { name, email, organisation, interestArea, message } = body || {};
 
         if (!name || !email) {
